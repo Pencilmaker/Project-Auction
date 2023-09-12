@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     url: jdbc:oracle:thin:@localhost:1521:xe
-    username: board
+    username: boardasdasd
     password: 1234
     driver-class-name: oracle.jdbc.driver.OracleDriver
     
