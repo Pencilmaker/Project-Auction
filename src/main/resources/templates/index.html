@@ -6,16 +6,30 @@
 </head>
 <body>
 	<img src="">
-	<form action="" method="get">
+	<form action="" class="search" method="get">
 		<input type="search">
-		<input type="submit">
+		<input type="submit" value="검색">
 	</form>
-	<div>
-		<p th:if="" th:text=""></p>
-		<p th:unless="">please sign in</p>
+	<div class="login">
+		<div class="signed" th:if="">
+			<p th:text=""></p>
+			님, 환영합니다!<br>
+			<input type="button" class="mypage" onclick="mypage()">
+		</div>
+		<div class="unsigned" th:unless="">
+			please sign in<br>
+		<input type="button" onclick="login.html">
+		</div>
 	</div>
-	<div th:each="product : ${products}">
-		
+	<div class="navigation">
+		<input type="button" class="category" onclick="">
+		<input type="button" class="search" onclick="">
+		<input type="button" class="" onclick="">
+		<input type="button" class="" onclick="">
+	</div>
+	<div class="product" th:each="product : ${products}">
+		<span th:text="${product.product_name}"></span>
+		<span th:hidden="${product.resisted_time}"></span>
 	</div>
 </body>
 </html>
