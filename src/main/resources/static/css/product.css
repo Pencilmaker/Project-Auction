@@ -1,0 +1,39 @@
+.main-contents {
+	width: 1000px;
+	height: 1200px;
+	background-color: #ffffc6;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.product-img {
+	float: left;
+	width: 500px;
+	height: 600px;
+	background-color: #ffffff;
+}
+
+.real-img {
+	text-align: center
+}
+
+.real-img img {
+	width: 460px;
+}
+
+.auction {
+	float: right;
+	width: 500px;
+	height: 600px;
+	background-color: #d5d5ff;
+}
+
+.auction-function {
+	margin: 30px auto;
+}
+
+.auction-function div {
+	margin: 20px auto;
+	width: 100%;
+	height: 50px;
+}
