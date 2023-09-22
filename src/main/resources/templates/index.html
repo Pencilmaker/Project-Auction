@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction</title>
 </head>
+<style>
+    .update {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+</style>
 <body>
-	<img src="">
-	<form action="" class="search" method="get">
-		<input type="search">
-		<input type="submit" value="검색">
-	</form>
-	<div class="login">
-		<div class="signed" th:if="">
-			<p th:text=""></p>
-			님, 환영합니다!<br>
-			<input type="button" class="mypage" onclick="mypage()">
-		</div>
-		<div class="unsigned" th:unless="">
-			please sign in<br>
-		<input type="button" onclick="login.html">
-		</div>
-	</div>
-	<div class="navigation">
-		<input type="button" class="category" onclick="">
-		<input type="button" class="search" onclick="">
-		<input type="button" class="" onclick="">
-		<input type="button" class="" onclick="">
-	</div>
-	<div class="product" th:each="product : ${products}">
-		<span th:text="${product.product_name}"></span>
+    <div class="update">
+        <div class="logo" style="float:left; width: 33%; padding: auto;">
+            <img src="/KakaoTalk_20230911_215907834.jpg" width="300" height="200" alt="" srcset="">
+        </div>
+        <div class="search" style="float:left; width: 33%; padding: auto;">
+            <form action="" method="get">
+                <input type="search" name="search" id="search">
+                <input type="submit" value="검색">
+            </form>
+        </div>
+        <div class="singed" style="float:left; width: 33%; padding: auto;">
+            <div class="signed" th:if=""> 
+			    <p th:text=""></p>
+			    님, 환영합니다!<br>
+			    <input type="button" class="mypage" onclick="mypage()">
+		    </div>
+		    <div class="unsigned" th:unless="">
+			    please sign in<br>
+		        <input type="button" onclick="login.html">
+		    </div>
+        </div>
+    </div>
+    <div style="clear:left">
+        <div class="navigation">
+            <input type="button" value="category" onclick="goCategory()">
+            <input type="button" value="mypage" onclick="goMyPage()">
+        </div>
+    </div>
+    <div class="products" th:each="product : ${products}">
+        <span th:text="${product.product_name}"></span>
 		<span th:hidden="${product.resisted_time}"></span>
-	</div>
+    </div>
 </body>
 </html>
