@@ -24,6 +24,26 @@
 				<div class="before-price">
 					<span id="price">이전 가격</span>
 					<button id="more">더보기</button>
+					
+					<script>
+					    // 버튼 요소를 가져오기
+					    var popupButton = document.getElementById('more');
+					
+					    // 버튼 클릭 이벤트에 대한 리스너 추가
+					    popupButton.addEventListener('click', function() {
+					        // 팝업 창의 너비와 높이 설정
+					        var popupWidth = 400;
+					        var popupHeight = 400;
+
+					        // 화면 중앙 위치 계산
+					        var left = (window.innerWidth - popupWidth) / 2;
+					        var top = (window.innerHeight - popupHeight) / 2;
+
+					        // 팝업 창을 열기
+					        window.open('beforeprice', '팝업 창 제목', 'width=' + popupWidth + ',height=' + popupHeight + ',left=' + left + ',top=' + top);
+					    });
+					</script>
+							
 				</div>
 				<div class="bidding">
 					<input type="number">

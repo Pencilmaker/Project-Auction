@@ -7,11 +7,17 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-public class homeController {
+public class productController {
 
 	@GetMapping("product")
 	public String ProductForm() {
 		log.info("");
 		return "product/product";
+	}
+	
+	@GetMapping("beforeprice")
+	public String BeforePrice() {
+		log.info("");
+		return "product/beforeprice";
 	}
 }

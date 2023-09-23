@@ -25,7 +25,7 @@
 	float: right;
 	width: 500px;
 	height: 600px;
-	background-color: #d5d5ff;
+	background-color: #ffffff;
 }
 
 .auction-function {
@@ -33,7 +33,7 @@
 }
 
 .auction-function div {
-	margin: 20px auto;
-	width: 100%;
+	margin: 15px auto;
 	height: 50px;
+	border: 2px solid #000000;
 }
