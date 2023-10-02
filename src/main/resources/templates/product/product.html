@@ -46,8 +46,10 @@
 							
 				</div>
 				<div class="bidding">
-					<input type="number">
-					<button>응찰</button>
+					<form action="product" method="post" th:object="${buy_log}">
+						<input type="number" th:field="*{update_price}">
+						<input type="submit">
+					</form>
 				</div>
 			</div>
 		</div>

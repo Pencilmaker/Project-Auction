@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.auction.repository.ProductMapper">
+	<select id="findBuy_log" resultType="buy_log">
+		select * from buy_log where product_id = #{product_id}
+	</select>
+</mapper>
