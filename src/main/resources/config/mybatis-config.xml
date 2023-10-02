@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.example.auction.model.member.Member" alias="member"/>
+		<typeAlias type="com.example.auction.model.product.Buy_log" alias="buy_log"/>
+	</typeAliases>
+</configuration>

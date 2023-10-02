@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="join" method="post" th:object="${member}">
+		<ul style="list-style-type: none;">
+			<li><input type="text" th:field="*{member_id}" autocomplete="off" placeholder="ID"></li>
+			<li><input type="password" th:field="*{password}" autocomplete="off" placeholder="password"></li>
+			<li><input type="text" th:field="*{username}" autocomplete="off" placeholder="username"></li>
+			<li><input type="date" th:field="*{birth}" autocomplete="off" placeholder="birth"></li>
+			<li><input type="text" th:field="*{gender}" autocomplete="off" placeholder="gender"></li>
+			<li><input type="text" th:field="*{address_1}" autocomplete="off" placeholder="address_1"></li>
+			<li><input type="text" th:field="*{address_2}" autocomplete="off" placeholder="address_2"></li>
+			<li><input type="text" th:field="*{address_3}" autocomplete="off" placeholder="address_3"></li>
+			<li><input type="text" th:field="*{email}" autocomplete="off" placeholder="email"></li>
+			<li><input type="text" th:field="*{phone}" autocomplete="off" placeholder="phone"></li>
+			<li><input type="submit" value="Join"></li>
+		</ul>
+	</form>
+</body>
+</html>

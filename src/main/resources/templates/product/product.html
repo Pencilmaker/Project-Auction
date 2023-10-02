@@ -6,7 +6,23 @@
 <link rel="stylesheet" href="css/product.css">
 </head>
 <body>
-	<h1>This is Product Introduce Page</h1>
+	<span id="current-time"></span><br>
+		<script>
+			function updateTime() {
+			// 현재 시간을 가져오기
+			var currentTime = new Date();
+							            
+			// 시간을 표시할 HTML 요소를 찾기
+			var timeElement = document.getElementById("current-time");
+							            
+			// 시간을 텍스트로 변환하여 요소에 삽입
+			timeElement.textContent = currentTime.toLocaleTimeString();
+			}
+							
+			// 페이지가 로드될 때와 1초마다 현재 시간 업데이트
+			updateTime(); // 초기 시간 설정
+			setInterval(updateTime, 1000); // 1초마다 업데이트
+		</script>
 	<div class="main-contents">
 		<div class="product-img">
 			<div class="real-img">
@@ -17,9 +33,39 @@
 			<div class="auction-function">
 				<div>제품 이름</div>
 				<div>판매자</div>
-				<div>시작 시간</div>
+				<div>시작일 : 2023-10-03</div>
 				<div>시작 가격</div>
-				<div>종료 시간</div>
+				<div>
+					<span>종료일 : 2023-10-10</span><br>
+				    <span>남은 시간 : </span>
+				    <span id="time-left"></span>
+				    <script>
+				        function calculateTimeLeft() {
+				            // 목표 시간 설정 (예: 2023년 12월 31일 23시 59분 59초)
+				            var targetDate = new Date("2023-10-10T00:00:00").getTime();
+				
+				            // 현재 시간 가져오기
+				            var currentDate = new Date().getTime();
+				
+				            // 남은 시간 계산
+				            var timeDifference = targetDate - currentDate;
+				
+				            // 밀리초를 시, 분, 초로 변환
+				            var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+				            var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				            var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+				            var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+				
+				            // 결과를 HTML에 표시
+				            var timeElement = document.getElementById("time-left");
+				            timeElement.innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초";
+				        }
+				
+				        // 페이지가 로드될 때와 1초마다 남은 시간 업데이트
+				        calculateTimeLeft(); // 초기 남은 시간 계산
+				        setInterval(calculateTimeLeft, 1000); // 1초마다 업데이트
+				    </script>									    	
+				</div>
 				<div>현재 가격</div>
 				<div class="before-price">
 					<span id="price">이전 가격</span>
@@ -46,8 +92,10 @@
 							
 				</div>
 				<div class="bidding">
-					<input type="number">
-					<button>응찰</button>
+					<form action="product" method="post" th:object="${buy_log}">
+						<input type="number" th:field="*{update_price}">
+						<input type="submit">
+					</form>
 				</div>
 			</div>
 		</div>

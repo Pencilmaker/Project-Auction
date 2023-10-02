@@ -6,5 +6,20 @@
 </head>
 <body>
 	<h1>BeforePrice Html Page</h1>
+	<div th:unless="${buy_logs}">
+		<h1>없습니다.</h1>
+	</div>
+	<div th:if="${buy_logs}">
+		<table>
+			<tr>
+				<th>가격</th>
+				<th>시간</th>
+			</tr>
+			<tr th:each="buy_log : ${buy_logs}">
+				<td th:text="${buy_log.update_price}"></td>
+				<td th:text="${buy_log.update_time}"></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
