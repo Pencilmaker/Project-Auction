@@ -16,4 +16,5 @@ public class Member {
 	private String address3;
 	private String email;
 	private String phone;
+	private RoleType role;
 }
