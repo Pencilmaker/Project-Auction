@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.example.auction.model.member.Member" alias="member"/>
+		<typeAlias type="com.example.auction.model.product.Product" alias="product"/>
 		<typeAlias type="com.example.auction.model.product.Buy_log" alias="buy_log"/>
 	</typeAliases>
 </configuration>

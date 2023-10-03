@@ -4,6 +4,10 @@
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.auction.repository.ProductMapper">
+	<select id="findProduct" resultType="product">
+		select * from product where product_id = #{product_id}
+	</select>
+
 	<select id="findBuy_log" resultType="buy_log">
 		select * from buy_log where product_id = #{product_id}
 	</select>

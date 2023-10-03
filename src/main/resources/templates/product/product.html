@@ -24,7 +24,8 @@
 			updateTime(); // 초기 시간 설정
 			setInterval(updateTime, 1000); // 1초마다 업데이트
 		</script>
-	<div class="main-contents">
+		
+	<div class="main-contents" th:object="${product}">
 		<div class="product-img">
 			<div class="real-img">
 				<img src="https://img.danawa.com/prod_img/500000/687/791/img/18791687_3.jpg?shrink=500:*&_v=20230705111010" alt="갤럭시S23">			
@@ -32,9 +33,9 @@
 		</div>
 		<div class="auction">
 			<div class="auction-function">
-				<div>제품 이름</div>
+				<div th:text="*{product_name}">제품 이름</div>
 				<div>판매자</div>
-				<div>시작일 : 2023-10-03</div>
+				<div th:text="*{resisted_time}">등록일 :</div>
 				<div>시작 가격</div>
 				<div>
 					<span>종료일 : 2023-10-10</span><br>
@@ -100,7 +101,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="product-info">제품 소개</div>
+		<div class="product-info" th:text="*{explanation}">제품 소개</div>
 	</div>
 
 </body>
