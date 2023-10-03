@@ -26,7 +26,7 @@ public class productController {
 
 	@GetMapping("product")
 	public String productForm(
-			@RequestParam(required = true) Long product_id,
+			@RequestParam Long product_id,
 			Model model) {
 		
 		Product product = productMapper.findProduct(product_id);
@@ -39,7 +39,7 @@ public class productController {
 		return "product/product";
 	}
 	
-	@PostMapping("product")
+	@PostMapping("{product}")
 	public String productInfo(@Validated @ModelAttribute("buy_log") Buy_log buy_log) {
 		log.info("입력 값:{}", buy_log);
 		return "product/product";
