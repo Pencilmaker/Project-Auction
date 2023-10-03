@@ -10,8 +10,4 @@ import com.example.auction.model.product.Product;
 @Mapper
 public interface IndexRepository {
 	public List<Product> ListProduct();
-	
-	public Member findMember();
-	
-	
 }

@@ -31,4 +31,9 @@ public class IndexController {
 		
 		return "mypage";
 	}
+	
+	@GetMapping("/product/{product_id}")
+	public String product(@PathVariable String product_id, Model model) {
+		return "product/{product_id}";
+	}
 }

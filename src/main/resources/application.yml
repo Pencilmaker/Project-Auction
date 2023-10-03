@@ -3,11 +3,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: board
-    password: 1234
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    
+#    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#    url: jdbc:mariadb://localhost:3306/orderservice
+    url: jdbc:log4jdbc:mariadb://localhost:3306/auction
+    username: root
+    password: root
+
 mybatis:
-  mapper-locations:
-  - classpath:mapper/**/*.xml
+  config-location: classpath:config/mybatis-config.xml
+  mapper-locations: classpath:mapper/**/*.xml

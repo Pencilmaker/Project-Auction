@@ -3,7 +3,9 @@ package com.example.auction.model.member;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 public class Member {
 	private String member_id;
