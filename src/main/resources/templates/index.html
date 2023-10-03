@@ -12,16 +12,6 @@
         flex-direction: row;
     }
 </style>
-<script>
-	function goMyPage(){
-		
-	}
-	
-	function goCategory(){
-		
-	}
-	
-</script>
 <body>
     <div class="update">
         <div class="logo" style="float:left; width: 33%; padding: auto;">
@@ -39,7 +29,7 @@
 			    님, 환영합니다!<br>
 			    <input type="button" class="mypage" onclick="mypage()">
 		    </div>
-		    <div class="unsigned" th:unless="">
+		    <div class="unsigned" th:unless=""> // th:authorization 으로 처리할 부분들이라서 안될듯
 			    please sign in<br>
 		        <input type="button" onclick="login.html">
 		    </div>
@@ -47,8 +37,8 @@
     </div>
     <div style="clear:left">
         <div class="navigation">
-            <input type="button" value="category" onclick="goCategory()">
-            <input type="button" value="mypage" onclick="goMyPage()">
+            <input type="button" value="category" onclick="location.href='category.html'">
+            <input type="button" value="mypage" onclick="location.href='mypage.html'">
         </div>
     </div>
     <div class="products" th:each="product : ${products}">

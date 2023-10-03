@@ -15,6 +15,6 @@ public class RestIndexController {
 	
 	@GetMapping("/listProduct")
 	public List<Product> getListProduct(){
-		return List<Product>;
+		return List<>;
 	}
 }
